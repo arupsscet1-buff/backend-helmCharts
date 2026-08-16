@@ -25,6 +25,9 @@ spec:
           volumeMounts:
             - name: mysql-storage
               mountPath: /var/lib/mysql
+          env:
+          - name: MYSQL_DATABASE
+            value: backend
       volumes:
         - name: mysql-storage
           persistentVolumeClaim:
