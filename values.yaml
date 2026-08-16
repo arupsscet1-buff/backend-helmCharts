@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   registry: 748624204530.dkr.ecr.ap-south-1.amazonaws.com
   repository: backend-app
-  tag: 5f73bcbc90cf3ac521c922050afecd2b44992d31
+  tag: 1736d1d0b18f3dd46432d8ae696cbd935d7a901b
   pullPolicy: IfNotPresent
   resources:
     requests:
