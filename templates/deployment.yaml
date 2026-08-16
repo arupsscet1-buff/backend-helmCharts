@@ -28,20 +28,18 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 
-          # The Service sends traffic only after the application is ready.
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: http
-            periodSeconds: 10
-            timeoutSeconds: 3
-            failureThreshold: 3
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/backend
 
-          # Restarts the container only when it becomes unhealthy after startup.
-          livenessProbe:
-            httpGet:
-              path: /actuator/health
-              port: http
-            periodSeconds: 20
-            timeoutSeconds: 3
-            failureThreshold: 3
+            - name: SPRING_DATASOURCE_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: backend-db-secret
+                  key: username
+
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: backend-db-secret
+                  key: password
