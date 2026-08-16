@@ -3,5 +3,4 @@ name: backend-helmCharts
 description: A Helm chart for Kubernetes
 type: application
 version: 1.0.0
-appVersion: "1.0.0"
-
+appVersion: "5f73bcbc90cf3ac521c922050afecd2b44992d31"

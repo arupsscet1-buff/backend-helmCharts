@@ -1,17 +1,15 @@
 name: backend-app
 replicaCount: 1
-
 image:
   registry: 748624204530.dkr.ecr.ap-south-1.amazonaws.com
   repository: backend-app
-  tag: latest
+  tag: 5f73bcbc90cf3ac521c922050afecd2b44992d31
   pullPolicy: IfNotPresent
   resources:
     requests:
       memory: '256Mi'
     limits:
       memory: '512Mi'
-
 service:
   type: ClusterIP
   port: 3030
